@@ -1,21 +1,20 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
 import logos from "../images/images";
 import { useWeatherData } from "../context/WeatherDataContext";
 import { useLanguage } from "../context/LanguageContext";
 import { useFetch } from "../hooks/useFetch";
-const {CloudySvg, RainLogoSvg, WaterLogoSvg, AirLogoSvg} = logos;
+const {CloudySvg} = logos;
 
 export default function TopArticle(){
-    const {todayWeatherFunc, updatingData} = useWeatherData();
+    const {updatingData} = useWeatherData();
     let {currentTranslation} = useLanguage();
-    let [isLoading, getWeatherData, getCityWeatherInfo] = useFetch();
+    let [getWeatherData, getCityWeatherInfo] = useFetch();
     
     useEffect(()=>{
         if (!updatingData) {
             getWeatherData('Kyiv')
         }
-    },[updatingData])
+    },[getWeatherData])
 
     return(
         <>

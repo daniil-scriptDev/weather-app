@@ -4,7 +4,6 @@ import SettingButton from "./SettingButton";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import DropDownMenu from "./DropDownMenu";
-import { useWeatherData } from "../context/WeatherDataContext";
 import Loader from "./Loader";
 import {useFetch} from '../hooks/useFetch';
 let StyledHeader = styled.header`
@@ -46,7 +45,7 @@ export default function Header(){
     let { currentTranslation, currentLang } = useLanguage();
     const translatedCitys = citys[currentLang] || citys["en"] 
 
-    let {toggleTheme, theme} = useTheme();
+    let {theme} = useTheme();
     let [city, setCity] = useState('');
     let [cityTips, setCityTips] = useState([]);
     let [isLoading, getWeatherData] = useFetch(false);
