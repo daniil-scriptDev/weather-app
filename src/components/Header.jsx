@@ -59,7 +59,7 @@ export default function Header(){
     };
     useEffect(()=>{
         citysFilter();
-    }, [city]);
+    });
      
     return(
         <>
