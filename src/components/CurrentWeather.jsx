@@ -8,13 +8,13 @@ const {CloudySvg} = logos;
 export default function TopArticle(){
     const {updatingData} = useWeatherData();
     let {currentTranslation} = useLanguage();
-    let [getWeatherData, getCityWeatherInfo] = useFetch();
+    let [,getWeatherData, getCityWeatherInfo] = useFetch();
     
-    useEffect(()=>{
-        if (!updatingData) {
-            getWeatherData('Kyiv')
-        }
-    })
+        useEffect(()=>{
+            if (!updatingData) {
+                getWeatherData('Kyiv')
+            }
+        })
 
     return(
         <>
