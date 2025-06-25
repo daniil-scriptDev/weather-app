@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import { useWeatherData } from "../context/WeatherDataContext";
 
-const getFullUrl = (newCity) => `http://api.weatherapi.com/v1/current.json?key=2ec896b565ea43719e6111358241307&q=${newCity}&aqi=no`
+const getFullUrl = (newCity) => `https://api.weatherapi.com/v1/current.json?key=2ec896b565ea43719e6111358241307&q=${newCity}&aqi=no`
 export function useFetch() {
     let [isLoading, setIsLoading] = useState(false);
     let {updatingData, setUpdatingData} = useWeatherData();
