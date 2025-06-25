@@ -3060,7 +3060,7 @@ const MockWeatherData = {
 let WeatherDataContext = createContext(null);
 
 let WeatherDataProvider = ({children}) => {
-    let [weatherData, setWeatherData] = useState(MockWeatherData);
+    let [weatherData] = useState(MockWeatherData);
     let [updatingData, setUpdatingData] = useState(null);
     let value = {
                     weatherData,

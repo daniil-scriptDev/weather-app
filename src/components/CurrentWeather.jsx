@@ -9,12 +9,12 @@ export default function TopArticle(){
     const {updatingData} = useWeatherData();
     let {currentTranslation} = useLanguage();
     let [getWeatherData, getCityWeatherInfo] = useFetch();
-    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(()=>{
         if (!updatingData) {
             getWeatherData('Kyiv')
         }
-    },[getWeatherData])
+    })
 
     return(
         <>
