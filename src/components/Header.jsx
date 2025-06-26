@@ -57,7 +57,7 @@ export default function Header(){
             })
             setCityTips(Object.entries(filteredTips));
         },
-        [city]
+        [city, translatedCitys]
     )
 
     useEffect(()=>{
