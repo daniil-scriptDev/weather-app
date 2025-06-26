@@ -1,4 +1,4 @@
-import {useEffect, useState } from "react";
+import {useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import SettingButton from "./SettingButton";
 import { useLanguage } from "../context/LanguageContext";
@@ -50,19 +50,22 @@ export default function Header(){
     let [cityTips, setCityTips] = useState([]);
     let [isLoading, getWeatherData] = useFetch(false);
     
-    let citysFilter  = () => {
-        let filteredTips = {};
-        Object.entries(translatedCitys).forEach(([key, value]) => {
-            if(value.includes(city)) filteredTips[key] = value;
-        })
-        setCityTips(Object.entries(filteredTips))
-    };
+    let citysFilter = useCallback(()=>{
+            let filteredTips = {};
+            Object.entries(translatedCitys).forEach(([key, value]) => {
+                if(value.includes(city)) filteredTips[key] = value;
+            })
+            setCityTips(Object.entries(filteredTips));
+        },
+        [city]
+    )
+
     useEffect(()=>{
         citysFilter();
-    });
-     
-    return(
-        <>
+    }, [citysFilter]);
+
+    return(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+        <>                                                                              
             <StyledHeader>
                 <div style={{position:'relative', display:'inline-block'}}>
                     <input 
