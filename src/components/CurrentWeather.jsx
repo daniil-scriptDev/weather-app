@@ -31,24 +31,24 @@ export default function TopArticle(){
                     </h1>
                     </div>
 
-                <div className="grid grid-cols-2 gap-x-8 gap-y-2 mt-4 text-xl">
-                    <span>{currentTranslation.info.feels_like}</span>
-                    <span>{updatingData?getCityWeatherInfo()["feelslike_c"]:""}°</span>
+                <div className="grid grid-cols-2 gap-x-8 gap-y-2 mt-8 text-xl">
+                    <span className="mt-3">{currentTranslation.info.feels_like}</span>
+                    <span className="mt-3">{updatingData?getCityWeatherInfo()["feelslike_c"]:""}°</span>
 
-                    <span>{currentTranslation.info.Humidity}</span>
-                    <span>{updatingData?getCityWeatherInfo()["humidity"]:""}</span>
+                    <span className="mt-3">{currentTranslation.info.Humidity}</span>
+                    <span className="mt-3">{updatingData?getCityWeatherInfo()["humidity"]:""}</span>
 
-                    <span>{currentTranslation.info.wind_kph}</span>
-                    <span>{updatingData?getCityWeatherInfo()["wind_kph"]:""}</span>
+                    <span className="mt-3">{currentTranslation.info.wind_kph}</span>
+                    <span className="mt-3">{updatingData?getCityWeatherInfo()["wind_kph"]:""}</span>
 
-                    <span>{currentTranslation.info.pressure_mb}</span>
-                    <span>{updatingData?getCityWeatherInfo()["pressure_mb"]:""}</span>
+                    <span className="mt-3">{currentTranslation.info.pressure_mb}</span>
+                    <span className="mt-3">{updatingData?getCityWeatherInfo()["pressure_mb"]:""}</span>
                     
-                    <span>{currentTranslation.info.vis_km}</span>
-                    <span>{updatingData?getCityWeatherInfo()["vis_km"]:""}</span>
+                    <span className="mt-3">{currentTranslation.info.vis_km}</span>
+                    <span className="mt-3">{updatingData?getCityWeatherInfo()["vis_km"]:""}</span>
                     
-                    <span>{currentTranslation.info.uv}</span>
-                    <span>{updatingData?getCityWeatherInfo()["uv"]:""}</span>
+                    <span className="mt-3">{currentTranslation.info.uv}</span>
+                    <span className="mt-3">{updatingData?getCityWeatherInfo()["uv"]:""}</span>
                     
                     <span className="text-gray-300 mt-4 text-small">{currentTranslation.info.last_updated}</span>
                     <span className="text-gray-300 mt-4 text-small">{updatingData?getCityWeatherInfo()["last_updated"]:""}</span>
